@@ -1,0 +1,46 @@
+// create a variable to hold your NFT's
+const nftHolder=[];
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT ($name, $lastname, $age, $haircolour, $skintone) 
+{
+    const nftDetails={
+        'name' : $name,
+        'last_name' : $lastname,
+        'age' : $age,
+        'haircolour' : $haircolour,
+        'skin_tone' : $skintone
+    };
+    nftHolder.push(nftDetails);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () 
+{
+    for(let i=0;i<nftHolder.length;i++)
+        {
+            console.log("\n◉ Metadata for NFT ID: "+(i+1)+"");
+            console.log("First Name:\t\t"+nftHolder[i]["name"]);
+            console.log("Last Name:\t\t"+nftHolder[i]["last_name"]);
+            console.log("Age:\t\t\t\t\t"+nftHolder[i]["age"]);
+            console.log("Hair Colour:\t"+nftHolder[i]["haircolour"]);
+            console.log("Skin Tone:\t\t"+nftHolder[i]["skin_tone"]);
+        }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() 
+{
+    const total=nftHolder.length;
+    console.log("\nTotal Number Of NFTs stored are: "+total);
+}
+
+// call your functions below this line
+mintNFT("Priyanshu","Koundal",19,"Black","Fair");
+mintNFT("Lakshuu","Koundal",17,"Black","Fair");
+mintNFT("Kituu","Koundal",19,"Brown","Fair");
+listNFTs();
+getTotalSupply();
